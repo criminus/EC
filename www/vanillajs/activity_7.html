@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - Activity 1</title>
+</head>
+<body>
+
+    <script>
+        /* In this activity we must add all values in an array and output the sum
+        we can do this with a for loop to go through each value and add it in a sum variable
+        */
+
+        //We are given the following array:
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        //Let's also define a new variable to hold the sum for this iteration.
+        let sum = 0;
+
+        //We create the for loop and use array.length to get the max number we stop the loop at.
+        for (let i = 0; i < numbers.length; i++) {
+            sum += numbers[i]; //So we add each number to the sum with each iteration
+        }
+        //then we console log the result which is 55.
+        console.log(`The sum is ${sum}`);
+    </script>
+    
+</body>
+</html>

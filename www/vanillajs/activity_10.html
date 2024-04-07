@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions - Activity 1</title>
+</head>
+<body>
+    <script>
+    /*
+        In this activity we must create two functions:
+        - to show the array content
+        - to find the max value of the array
+    */
+
+    //We first define the array:
+    const arr = [10, 2, 3, 4, 7];
+
+    //We create the first function that takes a parameter:
+    function printArr(param) {
+        console.log(`The content of the array is: ${param}`);
+    }
+    //then we call the function with the array as parameter:
+    printArr(arr);
+
+
+    //Now for the second function.
+    //We again need to create a function that takes one parameter:
+    function getMaxNum(param) {
+        //we define max as arr index 0 so we can compare the first element with all elements
+        let max = param[0];
+
+        //then we do the iteration as usual:
+        //We start with second element because there is no point to check if first element 0 is less than itself
+        for (let i = 1; i < param.length; i++) {
+            //If the number we are checking against first value in array 
+            //is greater than it, we update max with its value
+            if (param[i] > max) {
+                max = param[i];
+            }
+        }
+        //We now log the greatest number in that array.
+        console.log(`The max value in the array is: ${max}`);
+    }
+
+    getMaxNum(arr);
+
+
+    </script>
+</body>
+</html>

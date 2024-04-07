@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statements, variables</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        // Let's see how we can declare variables, assign a value to them, perform operations.
+        //Declaring 3 variables separated by , on a single line:
+        let x, y, z;
+        //Assign a value for two variables
+        x = 5;
+        y = 6;
+        //Perform addition operation between the two
+        z = x + y;
+        //Let's log the result.
+        console.log(z); // this should output 11 in the console.
+
+        //Let's also print this in our div id.
+        document.getElementById("result").innerHTML = z;
+
+        //Let's do a basic check and if the result is not 11 we display an alert message.
+        if (z !== 11) {
+            alert("The result is wrong! Please check your variables!");
+        }
+
+        /*
+            using words instead of numbers now
+            we will print the name and hello name with three versions.
+        */
+        name = "John";
+        //We can just simply use the name to print the variable name
+        console.log(name);
+        //We can use a string "Hello[space]" + variable name
+        console.log("Hello "+ name);
+        //We can use string "Hello[space]" then comma then variable name
+        console.log("Hello ", name);
+        // We can use the variable directly between the new quotations (backticks) `` and the variable inside curly brackets and $ at the beginning.
+        //With this method we can also print strings on new lines or multi line strings
+        console.log(`Hello ${name}`);
+
+        //Example of multi-line string:
+        console.log("This is my first string\n" + "This is my second string");
+        //Example using the backticks:
+        console.log(`This is my first string
+        This is my second string`);
+    </script>
+</body>
+</html>

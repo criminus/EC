@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Activity 2</title>
+</head>
+<body>
+    <!-- In this activity we must calculate the volume of a sphere.
+    the formula for this would be : (4/3) * pi * (radius ** 3) -->
+
+    <p>Input radious value and get the volume of a sphere.</p>
+    <label for="radius">Radius:</label><br>
+    <input id="radius" type="number" placeholder="Please enter the radius">
+    <br><br>
+    <label for="volume">Volume:</label><br>
+    <input id="volume" type="number"><br>
+    <button id="submitForm">Calculate</button>
+    <script>
+        //Function to calculate volume
+        function calcVolume() {
+            //Get the radius input value
+            let radiusInp = document.getElementById('radius').value;
+
+            //Let's check if the input radius is a number
+            if (!isNaN(radiusInp)) {
+                //we declare a const pi
+                const pi = 3.14;
+                //then we calculate the volume for the given radius
+                let volume = (4/3) * pi * (radiusInp ** 3);
+
+                //we now set the value of volume input with the new value
+                let volumeInp = document.getElementById('volume').value = volume.toFixed(2);
+            } else { alert('Please enter a valid number.'); }
+        }
+
+        //Now we add the function to our button so we can call it:
+        let subBtn = document.getElementById('submitForm').addEventListener('click', calcVolume);
+        
+    </script>
+</body>
+</html>

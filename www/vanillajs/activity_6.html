@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops - Activity 2</title>
+</head>
+<body>
+
+    <!-- In this activity we must create an input that will take a number
+    and will multiply it from 1 to 10 and display each multiplication and its result
+
+     We will create an empty element first that will hold our first statement that will include:
+    - the number to be multiplied
+    - the lower number we start with
+    - the last number we multiply our number with -->
+    <p><span id="multiplyText"></span></p>
+
+    <!-- Now we create another div that will hold our table -->
+    <div id="tableResult"></div>
+
+
+    <script>
+        //We declare the first multiplier, last multiplier and the input
+        let numStart = 1;
+        let numEnd = 10;
+        let numToMultiply = window.prompt('Please input a number:');
+
+        //Now with the data we have we will update our HTML multiplyText with the actual values given.
+        document.getElementById("multiplyText").textContent = `We will multiply ${numToMultiply} from ${numStart} to ${numEnd} in the table below:`;
+
+        //We start from 1 (numStart), we check if numStart is less or equal than numEnd (10) then we increase by 1
+        for (numStart; numStart <= numEnd; numStart++) {
+
+            //We create a new variable to hold our result for each multiplication
+            let result = numToMultiply * numStart;
+            // console.log(`Multiplication of ${numToMultiply} x ${numStart} = ${sum}`);
+            //Popupate our tableResult.
+            document.getElementById('tableResult').innerHTML += `${numToMultiply} x ${numStart} = ${result}<br>`;
+        }
+    </script>
+    
+</body>
+</html>

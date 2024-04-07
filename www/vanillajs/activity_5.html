@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops - Activity 1</title>
+</head>
+<body>
+    <p>Let's check each number that is smaller or equal to: <span id="checkTo"></span></p>
+    Let's now check each number:<br>
+    <div id="numbersOddEven"></div>
+
+    <script>
+        //We define the max number we want to stop at
+        let checkTo = 15;
+
+        //We print its value in our HTML span
+        document.getElementById('checkTo').textContent = checkTo;
+
+        //In this case we start to check each number including 0, to checkTo which is 15
+        // then we increase each number with 1 (++) until we reach the condition:
+        //if 0 is smaller or equal to 15.
+        for (i = 0; i <= checkTo; i++) {
+            //We now use a ternary condition to check if the number is either even or odd
+            //The ternary condition is very simple: condition ? expression1 : expression2
+            //In our example we check if the number can be divided with 2 and the rest is 0
+            //in case it's not 0 it will return odd.
+            let isEvenOdd = i % 2 == 0 ? 'is even' : 'is odd';
+            //Now for the display part, we insert each value in the HTML numbersOddEven by adding a + sign before the = operator.
+            document.getElementById('numbersOddEven').innerHTML += `${i} ${isEvenOdd}<br>`;
+        }
+    </script>
+</body>
+</html>

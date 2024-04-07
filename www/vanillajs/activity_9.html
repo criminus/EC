@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - Activity 3</title>
+</head>
+<body>
+    
+    <script>
+    /*
+        In this activity we must find the minimum and maximum number in an array
+        This can be done simply by using the Math.max and Math.min and spread operator ...
+        const numbers = [25, 14, 56, 15, 36, 56, 77, 18, 29, 49];
+        let min = Math.min(...numbers);
+        let max = Math.max(...numbers);
+        But we do a for loop again.
+    */
+
+    //the numbers we are working with in an array
+    const numbers = [25, 14, 56, 15, 36, 56, 77, 18, 29, 49];
+    // We define two new variables: min and max with index of numbers 0.
+    let min = numbers[0];
+    let max = numbers[0];
+
+    //Now we loop through the list for each of the min and max:
+    //We begin the iteration from the second element since we already have numbers set to first with index 0
+    //This will make sure each of the number will be compared exactly once.
+    for (let i = 1; i < numbers.length; i++) {
+
+        //This checks if the current value is greater than max and updates max
+        //with the current greater value
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+        //This will check if the current value is less than the current min
+        //then updates the min with the new less value
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+    }
+
+    //We can now log the results
+    console.log(`Original Array: ${numbers}`)
+    console.log(`Maximum value for the above array = ${max}`);
+    console.log(`Minimum value for the avove array = ${min}`);
+
+    </script>
+
+</body>
+</html>

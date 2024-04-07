@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Statements - Activity 2</title>
+</head>
+<body>
+
+    <script>
+    /*
+    In this activity we have to check if the numbers are in increasing order,
+    decreasing order or neither.
+    */
+
+    //Again, our code should have 3 inputs with 3 different numbers so let's create them.
+    let firstNum = window.prompt('Please enter the first number:');
+    let secondNum = window.prompt('Please enter the second number:');
+    let thirdNum = window.prompt('Please enter the third number:');
+
+    /*
+    Now we perform the basic first check if the numbers are increasing
+    We use the operator '<' to check if the first number is smaller than second
+    , second is smaller than third and first smaller than third. 
+    Meaning, our numbers are increasing in value.
+    For this check we don't use the 'or' (||) operator.
+    We use 'and' (&&).
+    If we use the 'or' operator this condition would return true if firstNum < secondNum
+    or secondNum < thirdNum or firstNum < thirdNum. Meaning, if my firstNum was 6, second was 5 and third was 7,
+    the condition would return true because 'or' would check if second is smaller than 7.
+    The 'or' operator would check if either one is true and return true.
+    */
+   
+    if (firstNum < secondNum && secondNum < thirdNum && firstNum < thirdNum) {
+        /* 
+        We console log this just for test and the result is true if:
+        firstNum < secondNum and secondNum < thirdNum and firstNum < thirdNum. 
+        Our numbers are increasing.
+        */
+        //console.log('Increasing order.');
+        alert('Increasing order.');
+
+    /*
+        Now, the other check is pretty clear. We just need to use > operator
+        to check if first is greater than second, second is greater than third, 
+        and first is greater than third.
+    */
+    } else if (firstNum > secondNum && secondNum > thirdNum && firstNum > thirdNum) {
+        //Console log again to double check before alert.
+        //console.log('Decreasing order.');
+
+        alert('Decreasing order.');
+    
+    /* 
+        Now for everything else, we return: 'Neither increasing or decreasing order.'
+        This time, this condition will return true, unlike the previous one done
+        in Control Statements - Activity 1.
+        This condition will return true if: firstNum = 15, secondNum = 1, third = 1.
+        We don't want to use less or eqal or greater or eqal because if we
+        input 1, 1, 1 the first statement and the second will return true and we don't want that.
+    */
+    } else { alert('Neither increasing or decreasing order.'); }
+    </script>
+    
+</body>
+</html>

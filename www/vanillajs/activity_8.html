@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - Activity 2</title>
+</head>
+<body>
+    
+    <script>
+    /* 
+        In this activity, we must get the average value of an array elements.
+        We do this by adding all of the elements then we divide them by array.length.
+    */
+    //We are given an array we are working with again:
+    const toAverageThis = [20, 30, 25, 35, -16, 60, -100];
+    //We need to store the sum again so we can then divide it.
+    let sum = 0;
+
+    //Now let's add all elements again with a for loop:
+    for (let i = 0; i < toAverageThis.length; i++) {
+        sum += toAverageThis[i];
+    }
+    //We check for 0 division just in case and since we are now
+    //familiar to if statements, we can begin to handle potential errors.
+    if (toAverageThis.length > 0) {
+        const average = sum / toAverageThis.length;
+        console.log(`Average value of the array elements is: ${average}`);
+    } else { console.log('Cannot calculate the average of an empty array.'); }
+    </script>
+
+</body>
+</html>

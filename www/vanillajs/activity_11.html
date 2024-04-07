@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions - Activity 2</title>
+</head>
+<body>
+    
+    <script>
+    /*
+        In this activity we must calculate the factorial of a given number.
+        The function should accept a number as an argument.
+    */
+    function getFactorial(n) {
+        //Check if n is negative
+        if (n < 0) {
+            return 'Factorial is not defined for negative numbers.';
+        }
+
+        //0, 1 factorial are equal to 1.
+        if (n === 0 || n === 1) {
+            return 1;
+        }
+
+        //Calculate factorial recursively
+        //The factorial of a number given 'n' is equal to 'n' multiplied by
+        //the factorial of the number one less than 'n'.
+        return n* getFactorial(n - 1);
+    }
+    console.log(getFactorial(6));
+    </script>
+
+</body>
+</html>

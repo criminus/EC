@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Minigame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- A wrapper to hold everything in place -->
+    <div id="wrap">
+        <h1>Rock &bull; Paper &bull; Scissors</h1>
+        <div class="container" id="container">
+        <!--
+        We want to create a container that will be our welcome message
+        and the input with the max rounds to be played against computer
+        We also want to create the game container that is hidden until we start.
+        -->
+            <div class="welcome-container" id="welcome-container">
+                <h3>Welcome!</h3>
+                <p>This is a simple rock paper scissors game created using HTML, CSS and JavaScript.
+                    <br>The game it's very simple. You must beat the computer at the game by choosing rock, paper or scissors.
+                    <br>The computer's choice is random.
+                    <br>Before you start, <b>you must specify how many rounds you want to play</b>. You can play 1 round minimum and 99 maximum.
+                    <br>At the game screen, you will see your score, computer's score and the ties.
+                    <br>The winner will be chosen after the maximum rounds are reached.
+                    <hr>
+                    <br>Please go ahead and enter how many rounds you want to play below and hit <b>START!</b>
+                </p>
+                <label for="name">Rounds (to play):</label>
+                <input type="number" id="gameRounds" placeholder="Please enter how many rounds" minlength="1" maxlength="99" />
+                <button id="start-game" onclick="startGame();">START!</button>
+                <div class="errorBlock" id="errorBlock">
+                    
+                </div>
+            </div>
+            <!--
+                Here we will have the game itself.
+                We will use a cool flip animation that can be found here:
+                https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card
+                To display our pick and computer's pick.
+            -->
+            <div class="game-container" id="game-container">
+                <h3>Game on!</h3>
+                <p>Round: <span id="currRound">0</span> / <span id="maxRounds">0</span></p>
+                <div class="gameCards">
+                    <div class="flip-card" id="myCard">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <p class="pick">?</p>
+                          </div>
+                          <div class="flip-card-back">
+                            <h3 class="pick-title">Your pick:<br><span id="myPick" class="myPick">Rock</span></h3> 
+                            <p id="pick" class="pick">👊</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="flip-card" id="computerCard">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <p class="pick">?</p>
+                          </div>
+                          <div class="flip-card-back">
+                            <h3 class="pick-title">Computer picks:<br><span id="computerPick" class="computerPick">Rock</span></h3> 
+                            <p id="pcPick" class="pick">👊</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons" id="buttons">
+                    <!-- Buttons should be here -->
+                </div>
+                <div class="scoreboard">
+                    <div id="myScore">Your points: <span id="myPoints">0</span></div>
+                    <div id="computerScore">Computer's points: <span id="computerPoints">0</span></div>
+                    <div id="tieScore">Ties: <span id="tiesPoints">0</span></div>
+                </div>
+                <div id="winner"></div>
+                <div class="restart-message">
+                    <button id="restart" onclick="window.location.reload();">Play again!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

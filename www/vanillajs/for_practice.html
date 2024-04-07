@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing different types of for loops</title>
+</head>
+<body>
+    <script>
+       /* 
+       For loops are used when we want to execute a code more than once
+       instead of executing the code 15 times, we can make a for loop that will
+       execute that piece of code 15 times instead.
+       There are a few types of for loops:
+       for loop, for .. of, for..in, while, do..while, forEach.
+       */
+
+       /*
+        Let's start with the easiest one: for loop.
+        In the example below we want to print the string 'hello' 5 times in the console.
+        Instead of using console.log('hello') 5 times on 5 different lines,
+        we will make a for loop below:
+       */
+
+        //Here we initiate a counter.
+        //We start at i = 0 (index 0)
+        //We are keep going from i = until it's less than 5
+        //with each execution we increase the index i with 1 (++ operator for increment)
+        for (let i = 0; i < 5; i++) {
+            console.log('hello'); 
+        }
+
+        //We can also decrement this by starting with i at a higher value.
+        //Now instead of ++ we use -- to decrement the number with each execution by 1
+        //We also want to change the operator to greater than so our execution
+        //stops when i is no longer greater than 0.
+        for (let i = 5; i > 0; i--) {
+            console.log('hello');
+        }
+        //This two loops will not be different in the console.
+        //Because it will print only the word hello 5 times.
+        //If we want our loops to be distinctive, we can pass the index also for each
+        //execution with console.log('hello' + i);
+        //Let's redo the loops below with this adjustment and see the result:
+        for (let i = 0; i < 5; i++) {
+            console.log('hello' + i);
+            //This will output:
+            //hello0
+            //hello1
+            //hello2
+            //hello3
+            //hello4
+            //It stops at 4 but there is actually 5 hello words
+            //In javascript the index is always starting from 0
+            //If we want to start the index from 1, we set let i = 1,
+            //then we check for i to be less or equal to 5 <=.
+        }
+        //Now for the decrement:
+        for(let i = 5; i > 0; i--) {
+            console.log('hello' + i);
+            //This will output:
+            //hello5
+            //hello4
+            //hello3
+            //hello2
+            //hello1
+            //Notice that 0 is no longer here? It's because 0 is not greater than 0
+        }
+
+        //What if we want to execute the code 100 times but stop at 10 executions?
+        //We can break the code once i is equal to 10.
+        //Let's practice:
+        for (let i = 0; i < 100; i++) {
+            console.log('hello' +i);
+            //if i is strictly equal to 10 then we stop.
+            if (i === 10) break; //We use break to stop a for loop from executing further.
+        }
+
+        //We can use for loops to also go through a list (array).
+        //Let's define a list of animals:
+        const animals = ['dog', 'cat', 'parrot', 'horse'];
+        //Now, we will still use the i 0 as a start but instead of a value
+        //for the condition, we use length to get the length of the array.
+        for (let i = 0; i < animals.length; i++) {
+            //now for the printing part, we need to access animals with index i [i]:
+            console.log(animals[i]);
+            //this way, each animal will be printed based on its index in the array.
+        }
+
+        //Now, when working with arrays, lists, we have something called for ... of
+        //A for of loop is similar to python's : for item in items
+        //so let's go through the list again with the for .. of loop this time:
+        for (animal of animals) {
+            console.log(animal);
+        }
+        //This for loop will deconstruct the list and assign each value to animal
+        //We can call the first value anything we want for example: for (something of animals) {console.log(something);}
+        //as long as we mention the actual list.
+        //This type of loop is a bit slower than the first for loop in our example.
+
+        //When working with objects we can use for .. in loops.
+        //This is very similar to for of loops:
+        //Let's make an object:
+        //An object contains key & value pairs same as associative arrays in PHP
+        const user = {'firstName': 'Anisor', 'lastName': 'Neculai'};
+        //Now let's print each key for this object:
+        for (key in user) {
+            console.log(`${key} ${user[key]}`);
+        }
+        //This becomes very logic after we learn how to access keys in objects.
+        //We can access the keys in an object with:
+        //console.log(user['firstName']);
+
+        //Let's do the while loops.
+        //While loops are basically the same but the code executes only
+        //if the condition is true.
+        //First, let's say we want to start from 0;
+        let i = 0;
+        //Now we do the while loop:
+        while(i < 5) {
+            console.log(i); //This executes first
+            i++; //Very important to increment it after with each execution
+            //Here we can also use i += 1;
+            //if we don't mention the increment then the loop will execute forever
+            //and the browser will break eventually.
+            //same with the while loop we can stop using break
+            // if (i === 2) break;
+            //We can also skip an execution by using continue instead of break:
+            // if (i === 2) continue;
+            //This will output:
+            //0
+            //1
+            //3
+            //4
+        }
+
+        //Now, for the do while loops:
+        //do while loops are very similar to while loops but they will execute
+        //at least once no matter what the condition is.
+        //Let's practice:
+        do {
+            i++;
+            console.log(i);
+        } while (i < 5); //if we change 5 to 0, the do while will execute once and incremen i by 1 and the output is 1 then it will stop since condition is false;
+
+    </script>
+</body>
+</html>

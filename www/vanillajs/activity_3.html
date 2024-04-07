@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Statements - Activity 1</title>
+</head>
+<body>
+
+    <script>
+        /*
+        In this activity we have to create 3 inputs and check if the numbers are:
+        equal, different, or neither equal or different 
+        */
+
+        //So we first create our three inputs for the user with window.prompt()
+        let firstInput = window.prompt('Please enter your first number:');
+        let secondNumber = window.prompt('Please enter the second number:');
+        let thirdNumber = window.prompt('Please enter the third number:');
+
+        /* 
+        Now let's to the basic if statement check
+        First we check if all numbers are equal
+        If first number is identical with second number and if second number
+        is identical to third number 
+        */
+        if (firstInput === secondNumber && secondNumber === thirdNumber) {
+            //We console log this just while writting the code to make sure our
+            //check works as expected. 
+            // console.log('All numbers are equal');
+
+            //We proceed with letting our user know that the values are the same:
+            alert('All numbers are equal.');
+
+        //Now, we make need to see if the numbers are different from one another.
+        //We check this by using the 'not equal' operator (!=) and 'or' operator (||)
+        } else if (firstInput != secondNumber || secondNumber != thirdNumber) {
+            //Again, we console log this before alerting while testing.
+            //console.log('All numbers are different.');
+
+            //Now we alert the user
+            alert('All numbers are different.');
+
+        /*
+        And for the last part, if none of the above, we let the user know
+        that neither all are equal or different. Which based on our checks
+        it will never actually happen.
+        */
+        } else {
+            //console.log('Neither all are equal or different.');
+            alert('Neither all are equal or different.');
+        }
+    </script>
+    
+</body>
+</html>
